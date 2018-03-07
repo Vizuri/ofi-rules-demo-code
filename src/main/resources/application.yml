@@ -1,0 +1,37 @@
+
+# -----------
+# Application Custom Configs.
+# TODO - find ways to remove the sensetive info from this file so plain text password are not checked into Git
+# -----------
+
+server:
+    port : 8090
+
+
+#endpoints:
+#    beans:
+#    health:
+#        sensitive: false
+spring:
+    application:
+        name: ak-demo
+    jackson:
+        date-format: yyyy-MM-dd
+
+# -----------
+# Logger settings.
+# -----------
+logging:
+  level:
+    com.ak:                        DEBUG
+    com.ak.demo:                   DEBUG
+    org.springframework.jdbc:      DEBUG
+    org.springframework.boot:      WARN
+    org.apache.catalina:           ERROR
+
+  pattern:
+#    console: "%d|cId %X{correlationId}|%-5p [%c{5}] %m%n"
+    console: "%d %-5p [%c{5}] %m%n"
+# Should not be used on localhost, but needed since it lives in application.yml
+#    file:    "%d|cId %X{correlationId}|%-5p [%c{5}] %m%n"
+    file:    "%d|%-5p [%c{5}] %m%n"
