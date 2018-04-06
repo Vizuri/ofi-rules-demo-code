@@ -5,6 +5,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.ak.demo.model.Fund;
 //import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +43,28 @@ public class AkSamplerService {
         else {
             return "50.00";
         }
+    }
+
+    public Fund getPositionsMarketValuePercentageJSON ( String aFundCode ) {
+        LOG.debug("getPositionsMarketValuePercentage starting for fund code: [{}]", aFundCode);
+        Fund aFund = new Fund();
+
+        if ( "00200".equals(aFundCode)) {
+            aFund.setCode(aFundCode);
+            aFund.setMarketValuePercentage("66.25");
+            aFund.setName("OFI fund 1");
+        }
+        else if ( "00700".equals(aFundCode)) {
+            aFund.setCode(aFundCode);
+            aFund.setMarketValuePercentage("78.35");
+            aFund.setName("OFI fund 2");
+        }
+        else {
+            aFund.setCode(aFundCode);
+            aFund.setMarketValuePercentage("50.15");
+            aFund.setName("OFI fund 3");
+        }
+        return aFund;
     }
 
     /*
