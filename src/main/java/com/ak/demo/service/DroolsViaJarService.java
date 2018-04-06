@@ -11,7 +11,7 @@ import java.util.HashMap;
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.StatelessKieSession;
-import com.myteam.ak_age_classification.Person;
+//import com.myteam.ak_age_classification.Person;
 //import org.sis.rules.sis_demo.PersonClassificationCo
 
 @Service
@@ -30,60 +30,61 @@ public class DroolsViaJarService {
             StatelessKieSession kSession=   kContainer.newStatelessKieSession();
             // kSession.setGlobal(arg0, arg1);
 
-        Person p1 = new Person();
-        p1.setAge(11);
-        p1.setName("Joe");
-        //p1.setLastName("Minor");
-    
-        Person p2 = new Person();
-        p2.setAge(44);
-        p2.setName("Jane");
-        //p2.setLastName("Adult");
-        
-        Person p3 = new Person();
-        p3.setAge(84);
-        p3.setName("Senior Al");
-        //p3.setLastName("Senior");
-        // kSession.insert(p);
-        
-        HashMap results = new HashMap();
-        kSession.setGlobal("results", results);
-        
-        ArrayList<Person> input = new ArrayList<Person>();
-        input.add(p1);
-        input.add(p2);
-        input.add(p3);
-        
-        LOG.debug("-------------------------------");
-        LOG.debug("Groups BEFORE kSession calls");
-        LOG.debug("p1: [{}], p2: [{}],], p3: [{}]", p1.getGroup(), p2.getGroup(), p3.getGroup());
-        LOG.debug("-------------------------------");
+//        Person p1 = new Person();
+//        p1.setAge(11);
+//        p1.setName("Joe");
+//        //p1.setLastName("Minor");
+//    
+//        Person p2 = new Person();
+//        p2.setAge(44);
+//        p2.setName("Jane");
+//        //p2.setLastName("Adult");
+//        
+//        Person p3 = new Person();
+//        p3.setAge(84);
+//        p3.setName("Senior Al");
+//        //p3.setLastName("Senior");
+//        // kSession.insert(p);
+//        
+//        HashMap results = new HashMap();
+//        kSession.setGlobal("results", results);
+//        
+//        ArrayList<Person> input = new ArrayList<Person>();
+//        input.add(p1);
+//        input.add(p2);
+//        input.add(p3);
+//        
+//        LOG.debug("-------------------------------");
+//        LOG.debug("Groups BEFORE kSession calls");
+//        LOG.debug("p1: [{}], p2: [{}],], p3: [{}]", p1.getGroup(), p2.getGroup(), p3.getGroup());
+//        LOG.debug("-------------------------------");
+//
+//        kSession.execute(input);
+//        
+//        LOG.debug("*===============================*");
+//        LOG.debug("Groups AFTER kSession calls");
+//        LOG.debug("p1: [{}], p2: [{}],], p3: [{}]", p1.getGroup(), p2.getGroup(), p3.getGroup());
+//        LOG.debug("*===============================*");
+//        
+//        String poorMansJson = String.join(
+//                System.getProperty("line.separator"), 
+//                "{",
+//                "\"person_groups\":[",
+//                    "{\"name\": \"" + p1.getName() + "\",",
+//                    "\"group\": \"" + p1.getGroup() + "\"},",
+//
+//                    "{\"name\": \"" + p2.getName() + "\",",
+//                    "\"group\": \"" + p2.getGroup() + "\"},",
+//
+//                    "{\"name\": \"" + p3.getName() + "\",",
+//                    "\"group\": \"" + p3.getGroup() + "\"}",
+//                "]",
+//                "}"
+//                );
 
-        kSession.execute(input);
         
-        LOG.debug("*===============================*");
-        LOG.debug("Groups AFTER kSession calls");
-        LOG.debug("p1: [{}], p2: [{}],], p3: [{}]", p1.getGroup(), p2.getGroup(), p3.getGroup());
-        LOG.debug("*===============================*");
-        
-        String poorMansJson = String.join(
-                System.getProperty("line.separator"), 
-                "{",
-                "\"person_groups\":[",
-                    "{\"name\": \"" + p1.getName() + "\",",
-                    "\"group\": \"" + p1.getGroup() + "\"},",
-
-                    "{\"name\": \"" + p2.getName() + "\",",
-                    "\"group\": \"" + p2.getGroup() + "\"},",
-
-                    "{\"name\": \"" + p3.getName() + "\",",
-                    "\"group\": \"" + p3.getGroup() + "\"}",
-                "]",
-                "}"
-                );
-
-        
-        return poorMansJson;
+//        return poorMansJson;
+            return null;
     }
     
     

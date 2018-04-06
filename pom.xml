@@ -53,12 +53,13 @@
 
 		<!-- Drools Dependencies -->
 		<!-- Added it myself and it's looking in the .m2 folder -->
+		<!--  
 		<dependency>
 			<groupId>com.myteam</groupId>
 			<artifactId>ak-age-classification</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-
+		-->
 
 		<dependency>
 			<groupId>org.kie</groupId>

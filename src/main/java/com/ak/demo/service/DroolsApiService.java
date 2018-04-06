@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory;
 //import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.myteam.ak_age_classification.Person;
+//import com.myteam.ak_age_classification.Person;
 //import org.sis.rules.sis_demo.PersonClassificationCo
 
 @Service
@@ -66,79 +66,37 @@ public class DroolsApiService {
         Command<?>  globals = commandsFactory.newSetGlobal("results", results, true);
         
                 
-        Person p1 = new Person();
-        p1.setAge(11);
-        p1.setName("Young Joe");
-        //p1.setLastName("Minor");
-    
-        Person p2 = new Person();
-        p2.setAge(44);
-        p2.setName("Young Jane");
-        //p2.setLastName("Adult");
-        
-        Person p3 = new Person();
-        p3.setAge(84);
-        p3.setName("Mr. Adult Bob");
-        //p3.setLastName("Senior");
-        
-
-        Command<?> insertP1 = commandsFactory.newInsert(p1,"p1");   
-        Command<?> insertP2 = commandsFactory.newInsert(p1,"p2");   
-        Command<?> insertP3 = commandsFactory.newInsert(p1,"p3");   
-        Command<?> fireAllRules = commandsFactory.newFireAllRules(10000);
-//      Command<?> agenda1 =commandsFactory.newAgendaGroupSetFocus("qs-ir-response");
-//      Command<?> agenda2 =commandsFactory.newAgendaGroupSetFocus("qs-ir-process");
-//      Command<?> agenda3 =commandsFactory.newAgendaGroupSetFocus("qs-ir-init");
-//      
-        //ObjectFilter cFilter = new ClassObjectFilter(PersonClassificationCounter.class);
-        
-        
-        
-        //Command<?> getObjects = commandsFactory.newGetObjects(cFilter, "myobjects");
-
-        
-        //Command<?> batchCommand = commandsFactory.newBatchExecution(Arrays.asList(insertPerson, fireAllRules), "Ksession");
-        //Command<?> batchCommand = commandsFactory.newBatchExecution(Arrays.asList(globals, insertP1, insertP2, insertP3,  agenda1,agenda2,agenda3, fireAllRules), "sis-demo-session");
-
-        Command<?> batchCommand = commandsFactory.newBatchExecution(Arrays.asList( insertP1, insertP2, insertP3, fireAllRules));
-
-        
-        ServiceResponse<ExecutionResults> executeResponse = rulesClient.executeCommandsWithResults(CONTAINER_ID, batchCommand);
-
-        
-        LOG.debug("aaaaaaaaApi returned: " + executeResponse.getResult().getIdentifiers());
-        
-        return executeResponse.getResult();
-
-        /*
-        //if (executeResponse.getType() == ResponseType.SUCCESS) {
-        if (true ){
-            System.out.println("Commands executed with success! Response: ");
-        
-            System.out.println(executeResponse.getResult());
-            ExecutionResults eResults = executeResponse.getResult();
-
-
-            
-//          Collection<String> handles = eResults.getIdentifiers();
-//          for (String handle : handles) {
-//              System.out.println("Handle:" + handle );
-//              System.out.println("HandleObj:" + results.getValue(handle));
-//          }
-            
-//          QueryResults qResults =  (QueryResults)results.getValue("counters");
-//          for (QueryResultsRow queryResultsRow : qResults) {
-//                  PersonClassificationCounter pcc = (PersonClassificationCounter) queryResultsRow.get("counters");
-//                  System.out.println("Counters:" + pcc.getAdults() + ":" + pcc.getMinors() + ":" + pcc.getSeniors());
-//          }
-//          
-            
-            
-        } else {
-            System.out.println("Error executing rules. Message: ");
-            System.out.println(executeResponse.getMsg());
-        }
-        */
+//        Person p1 = new Person();
+//        p1.setAge(11);
+//        p1.setName("Young Joe");
+//        //p1.setLastName("Minor");
+//    
+//        Person p2 = new Person();
+//        p2.setAge(44);
+//        p2.setName("Young Jane");
+//        //p2.setLastName("Adult");
+//        
+//        Person p3 = new Person();
+//        p3.setAge(84);
+//        p3.setName("Mr. Adult Bob");
+//        //p3.setLastName("Senior");
+//        
+//
+//        Command<?> insertP1 = commandsFactory.newInsert(p1,"p1");   
+//        Command<?> insertP2 = commandsFactory.newInsert(p1,"p2");   
+//        Command<?> insertP3 = commandsFactory.newInsert(p1,"p3");   
+//        Command<?> fireAllRules = commandsFactory.newFireAllRules(10000);
+//
+//        Command<?> batchCommand = commandsFactory.newBatchExecution(Arrays.asList( insertP1, insertP2, insertP3, fireAllRules));
+//
+//        
+//        ServiceResponse<ExecutionResults> executeResponse = rulesClient.executeCommandsWithResults(CONTAINER_ID, batchCommand);
+//
+//        
+//        LOG.debug("aaaaaaaaApi returned: " + executeResponse.getResult().getIdentifiers());
+//        
+//        return executeResponse.getResult();
+        return null;
     }
 
 
